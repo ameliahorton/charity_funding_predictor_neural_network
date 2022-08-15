@@ -1,0 +1,13 @@
+# PURPOSE AND PREPROCESSING
+The purpose of this analysis is to predict whether or not an organization will be successful in completing their goals after being given funding, so that Alphabet Soup Charity can decide which organizations to fund. The target for our model is the IS_SUCCESSFUL column, so in the X values for training our model, we want to remove that column to see how accurate of a model we can get using other columns to predict the outcome of that column. The features in our analysis are the following columns: APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL CONSIDERATIONS, and ASK_AMT. Columns EIN and NAME are not targets or features so we remove them from our input data during preprocessing. 
+ 
+# BUILDING THE MODEL
+When I built my initial model, I had two hidden layers plus an output layer. 
+(IMG)
+I then trained the model 100 times and got an accuracy of 0.7272. This initial model does not quite meet the accuracy goal of 0.75 or greater.
+ 
+# ATTEMPTS TO OPTIMIZE
+I tried making several different changes to see how they would impact model performance. I tried removing additional columns during preprocessing, such as the CLASSIFICATION column. This decreased the accuracy. I also tried lowering the cutoff values for APPLICATION_TYPE and CLASSIFICATION. This also didn’t help. I then tested out adding a third hidden layer, as well as increasing the number of times I trained the model from 100 to 200. Unfortunately, none of these changes improved the accuracy rating, but I was able to make some changes and still get a similar accuracy score of 0.7258, as shown in my second notebook file, alphabetsoupcharity_optimized.ipynb. 
+ 
+# SUMMARY
+Although I was not able to reach the accuracy goal of 0.75, I did get decently close in both of my slightly different models. I think the models I created could still be used as a tool for evaluating potential success, although the user would have to keep in mind that they are not as highly accurate as we may have originally hoped. If I was to proceed with trying to create a more accurate model, I could try a machine learning model next, such as a random forest classifier. I think this type of model has the potential to help solve our problem because its complexity can be adjusted. Just like how we can add or remove hidden layers or nodes in a neural network, we can add or remove individual trees in a random forest. In general, it seems that the best way to find a well fitting model for a dataset is to test out several different types of models and see which one gives us a higher accuracy.
